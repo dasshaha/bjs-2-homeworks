@@ -39,8 +39,8 @@ class AlarmClock {
 			const currentTime = this.getCurrentFormattedTime();
 			this.alarmCollection.forEach(alarm => {
 				if (alarm.time === currentTime && alarm.canCall) {
-					alarm.canCall = false; // предотвращаем повторный вызов
-					alarm.callback(); // вызываем колбек
+					alarm.canCall = false;
+					alarm.callback();
 				}
 			});
 		}, 1000);
@@ -58,7 +58,7 @@ class AlarmClock {
 	}
 
 	clearAlarms() {
-		this.stop(); // останавливаем будильник
-		this.alarmCollection = []; // очищаем все звонки
+		this.stop();
+		this.alarmCollection = [];
 	}
 }
